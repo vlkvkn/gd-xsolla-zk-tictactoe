@@ -1,26 +1,8 @@
-from web3 import Web3
 import sys
 import json
-import os
-from dotenv import load_dotenv
+from tictactoe import w3, get_account, get_contract, sign_and_send
 
-# 🌍 Load environment variables from .env
-load_dotenv()
-PRIVATE_KEY = os.getenv("PRIVATE_KEY")
-#print(PRIVATE_KEY)
-
-if not PRIVATE_KEY:
-    print("Error: PRIVATE_KEY not set in .env file.")
-    sys.exit(1)
-
-# ⚙️ Configuration
-RPC_URL = "https://zkrpc.xsollazk.com"
-CONTRACT_ADDRESS = "0xC43e8965367D53b83C97E65203EdaB272dFe98CE"
-
-# 📡 Initialize Web3
-w3 = Web3(Web3.HTTPProvider(RPC_URL))
-acct = w3.eth.account.from_key(PRIVATE_KEY)
-contract_address = Web3.to_checksum_address(CONTRACT_ADDRESS)
+acct = get_account()
 
 # ABI only for the move() function
 abi = [
@@ -37,7 +19,7 @@ abi = [
 ]
 
 # 📲 Connect to contract
-contract = w3.eth.contract(address=contract_address, abi=abi)
+contract = get_contract(abi)
 
 # 🧾 Get parameters from CLI
 if len(sys.argv) != 3:
@@ -60,8 +42,7 @@ tx = contract.functions.move(row, col).build_transaction({
 })
 
 # ✍️ Sign and send
-signed_tx = w3.eth.account.sign_transaction(tx, private_key=PRIVATE_KEY)
-tx_hash = w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+tx_hash = sign_and_send(tx)
 
 # ⏳ Output result
 print(json.dumps({
