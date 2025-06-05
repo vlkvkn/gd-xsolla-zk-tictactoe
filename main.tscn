@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://rksdcp13p648"]
+
+[ext_resource type="Script" uid="uid://w68owhrp0aym" path="res://Main.gd" id="1"]
+[ext_resource type="Script" uid="uid://20j3lnnunfgk" path="res://Cell.gd" id="2"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+columns = 3
+
+[node name="Cell0" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell1" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell5" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell6" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell7" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Cell8" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+script = ExtResource("2")
