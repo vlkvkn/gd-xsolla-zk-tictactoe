@@ -1,12 +1,5 @@
-from web3 import Web3
-import sys
 import json
-
-# URL RPC Xsolla zk testnet
-w3 = Web3(Web3.HTTPProvider("https://zkrpc.xsollazk.com"))
-
-# Вводим аргументами: адрес контракта и адрес пользователя (необязательно)
-contract_address = Web3.to_checksum_address("0xC43e8965367D53b83C97E65203EdaB272dFe98CE")
+from tictactoe import get_contract
 
 # ABI только для метода getBoard() и enum Cell
 abi = [
@@ -26,7 +19,7 @@ abi = [
 ]
 
 # Подключение к контракту
-contract = w3.eth.contract(address=contract_address, abi=abi)
+contract = get_contract(abi)
 
 # Получаем доску
 board_raw = contract.functions.getBoard().call()
