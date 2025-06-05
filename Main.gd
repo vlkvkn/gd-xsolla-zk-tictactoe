@@ -26,7 +26,7 @@ func _ready():
 
 #func _ready2():
 	#
-       #var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
+	#var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
 	#var full_script_path = ProjectSettings.globalize_path(script_path)
 #
 	#var args = [full_script_path]
@@ -91,7 +91,7 @@ func make_move(index):
 
 func update_ui():
 	
-       var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
+	var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
 	var full_script_path = ProjectSettings.globalize_path(script_path)
 
 	var args = [full_script_path]
@@ -112,21 +112,21 @@ func update_ui():
 	else:
 		print("Parsing JSON error:", output[0])
 	
-       for i in range(9):
-               var cell = get_node("GridContainer/Cell" + str(i))
-               if cell != null:
-                        match board[i]:
-                                "X":
-                                        cell.icon = cross_texture
-                                        cell.text = ""
-                                "O":
-                                        cell.icon = circle_texture
-                                        cell.text = ""
-                                _:
-                                        cell.icon = null
-                                        cell.text = ""
-               else:
-                       print("Cell", i, " not found!")
+	for i in range(9):
+		var cell = get_node("GridContainer/Cell" + str(i))
+		if cell != null:
+			match board[i]:
+				"X":
+					cell.icon = cross_texture
+					cell.text = ""
+				"O":
+					cell.icon = circle_texture
+					cell.text = ""
+				_:
+					cell.icon = null
+					cell.text = ""
+		else:
+			print("Cell", i, " not found!")
 	
 	check_winner()
 
