@@ -23,3 +23,6 @@ window/size/viewport_height=312
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=2
+
+[metadata]
+tags=PackedStringArray("demo", "xsollazk", "web3", "blockchain", "tutorial", "sample")
