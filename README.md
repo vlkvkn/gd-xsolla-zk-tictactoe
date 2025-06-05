@@ -36,6 +36,10 @@ python xsolla-zk-lib/tictactoe-move.py <row> <col>  # send a move
 python xsolla-zk-lib/tictactoe-getBoard.py    # print board state
 ```
 
+## Smart Contract
+
+The Solidity source for the on-chain logic resides in `contracts/TicTacToeVsAI.sol`.
+
 ## Testing Locally
 
 There is no automated test suite. To ensure the scripts work you can run a quick syntax check:
