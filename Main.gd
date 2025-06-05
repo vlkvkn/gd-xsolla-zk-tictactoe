@@ -4,6 +4,10 @@ var board = ["", "", "", "", "", "", "", "", ""]
 var player_turn = true
 var game_over = false
 
+# Textures for prettier board rendering
+var cross_texture: Texture2D = preload("res://cross.svg")
+var circle_texture: Texture2D = preload("res://circle.svg")
+
 func pythonpath():
 	var output: Array = []
 	var exit_code = OS.execute("where", ["python"], output, true)
@@ -108,12 +112,21 @@ func update_ui():
 	else:
 		print("Parsing JSON error:", output[0])
 	
-	for i in range(9):
-		var cell = get_node("GridContainer/Cell" + str(i))
-		if cell != null:
-			cell.text = board[i]
-		else:
-			print("Cell", i, " not found!")
+       for i in range(9):
+               var cell = get_node("GridContainer/Cell" + str(i))
+               if cell != null:
+                        match board[i]:
+                                "X":
+                                        cell.icon = cross_texture
+                                        cell.text = ""
+                                "O":
+                                        cell.icon = circle_texture
+                                        cell.text = ""
+                                _:
+                                        cell.icon = null
+                                        cell.text = ""
+               else:
+                       print("Cell", i, " not found!")
 	
 	check_winner()
 

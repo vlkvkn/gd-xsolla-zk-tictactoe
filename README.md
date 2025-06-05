@@ -26,7 +26,7 @@ Traditional games rely on local logic and are hard to verify. By moving the game
 ## Running the Game
 
 1. Open the project in Godot and press **Play**.
-2. When you click a cell, the project calls the Python scripts in `xsolla-zk-lib/` to start the game, make a move and refresh the board.
+2. When you click a cell, the project calls the Python scripts in `xsolla-zk-lib/` to start the game, make a move and refresh the board. The board now uses vector images (`cross.svg` and `circle.svg`) instead of plain text for a cleaner look.
 
 You can also run the Python helpers directly from the command line if desired:
 
