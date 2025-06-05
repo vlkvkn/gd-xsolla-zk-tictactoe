@@ -40,6 +40,9 @@ python xsolla-zk-lib/tictactoe-getBoard.py    # print board state
 
 The Solidity source for the on-chain logic resides in `contracts/TicTacToeVsAI.sol`.
 
+The contract is deployed at `0xC43e8965367D53b83C97E65203EdaB272dFe98CE`.
+You can view it on the [Xsolla zkEVM explorer](https://xsollazk.com/explorer/address/0xC43e8965367D53b83C97E65203EdaB272dFe98CE#transactions).
+
 ## Testing Locally
 
 There is no automated test suite. To ensure the scripts work you can run a quick syntax check:
