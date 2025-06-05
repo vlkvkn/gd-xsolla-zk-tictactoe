@@ -22,7 +22,7 @@ func _ready():
 
 #func _ready2():
 	#
-	#var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # путь внутри проекта — нужно преобразовать
+       #var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
 	#var full_script_path = ProjectSettings.globalize_path(script_path)
 #
 	#var args = [full_script_path]
@@ -87,7 +87,7 @@ func make_move(index):
 
 func update_ui():
 	
-	var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # путь внутри проекта — нужно преобразовать
+       var script_path = "res://xsolla-zk-lib/tictactoe-getBoard.py"  # path inside the project—needs conversion
 	var full_script_path = ProjectSettings.globalize_path(script_path)
 
 	var args = [full_script_path]

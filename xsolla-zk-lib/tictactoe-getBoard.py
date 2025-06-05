@@ -1,7 +1,7 @@
 import json
 from tictactoe import get_contract
 
-# ABI только для метода getBoard() и enum Cell
+# ABI only for the getBoard() method and the Cell enum
 abi = [
     {
         "inputs": [],
@@ -18,15 +18,15 @@ abi = [
     }
 ]
 
-# Подключение к контракту
+# Connect to the contract
 contract = get_contract(abi)
 
-# Получаем доску
+# Retrieve the board
 board_raw = contract.functions.getBoard().call()
 
-# Преобразуем числа в символы для удобства
+# Convert numbers to symbols for convenience
 cell_map = {0: "", 1: "X", 2: "O"}
 board = [[cell_map.get(cell, "?") for cell in row] for row in board_raw]
 
-# Вывод JSON
+# Output JSON
 print(json.dumps({"board": board}))
