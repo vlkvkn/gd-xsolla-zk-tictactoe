@@ -1,4 +1,6 @@
 *.tmp
 .godot
-xsolla-zk-lb/.env
+xsolla-zk-lib/.env
+xsolla-zk-lib/__pycache__
+*.import
 .env
